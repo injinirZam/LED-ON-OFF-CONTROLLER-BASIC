@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000; // Choose any available port
+const port = process.env.PORT || 3000;
 
 // CORS middleware
 app.use((req, res, next) => {
@@ -21,5 +21,5 @@ app.get('/off', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+    console.log(`Server is running on port ${port}`);
 });
